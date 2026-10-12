@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8fafb;
+  --foreground: #0f1a1f;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+
+  /* Ruhige Blau-Grün-Skala (keine Rot–Grün-Semantik, siehe Konzept 9.2) */
+  --color-ink: #0f1a1f;
+  --color-muted: #52616a;
+  --color-subtle: #84919a;
+  --color-line: #e3e8eb;
+  --color-surface: #ffffff;
+  --color-wash: #e6f2f6;
+  --color-accent: #6fb8cf;
+  --color-accent-strong: #2f7f99;
+  --color-accent-soft: #e5f2f7;
+  --color-chip: #f0f3f5;
+  --color-warn: #c98a1b;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+/* Feines Raster hinter dem Hero, zum Rand hin ausgeblendet */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(15, 26, 31, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 26, 31, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+
+.glow {
+  background: radial-gradient(50% 50% at 50% 50%, rgba(111, 184, 207, 0.35), transparent 70%);
+}
